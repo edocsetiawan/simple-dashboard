@@ -28,7 +28,6 @@ class CreateRoleUserTable extends Migration
         $data_user['password']      = bcrypt('password');
         $user                       = User::create($data_user);
 
-        $data_role['user_id']       = $user->id;
         $data_role['status']        = 'active';
         $data_role['position']      = 'super_admin';
         RoleUser::create($data_role);

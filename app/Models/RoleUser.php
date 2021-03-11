@@ -9,5 +9,5 @@ class RoleUser extends Model
 {
     use HasFactory;
     protected $table = 'role_user';
-    protected $fillable = ['status','position','is_delete'];
+    protected $fillable = ['id','status','position','is_delete'];
 }
