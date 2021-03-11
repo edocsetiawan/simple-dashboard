@@ -78,7 +78,7 @@ class UserController extends Controller
      */
     public function userList()
     {
-        $data = User::join('role_user','role_user.id','users.id')->where('role_user.is_delete',0)->get();
+        $data = User::join('role_user','role_user.id','users.id')->where('role_user.is_delete',0)->where('role_user.position','!=','super_admin')->get();
         if($data){
             return $this->responseApi('ok',$data,'Successfully log out');
         }else{
